@@ -23,6 +23,12 @@ app.get("/blogs", (req, res) => {
   });
 });
 
+app.get("/add", (req, res) => {
+  res.render("add");
+});
+
+app.post("/add", (req, res) => {});
+
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
 });
