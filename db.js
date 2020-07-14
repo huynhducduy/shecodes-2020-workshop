@@ -1,7 +1,7 @@
-var config = require("./config");
-var mysql = require("mysql");
+const config = require("./config");
+const mysql = require("mysql");
 
-var con = mysql.createConnection({
+const con = mysql.createConnection({
   host: config.host,
   user: config.username,
   password: config.password,
