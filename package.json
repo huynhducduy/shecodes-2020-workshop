@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/huynhducduy/shecodes-2020-workshop#readme",
   "dependencies": {
+    "aws-sdk": "^2.713.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.3",
     "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "mysql": "^2.18.1"
   }
 }
