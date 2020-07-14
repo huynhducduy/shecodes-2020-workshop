@@ -1,0 +1,19 @@
+{
+  "name": "shecodes-2020-workshop",
+  "version": "1.0.0",
+  "description": "Source code of Shecodes Hackathon 2020 Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huynhducduy/shecodes-2020-workshop.git"
+  },
+  "author": "Huynh Duc Duy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huynhducduy/shecodes-2020-workshop/issues"
+  },
+  "homepage": "https://github.com/huynhducduy/shecodes-2020-workshop#readme"
+}
