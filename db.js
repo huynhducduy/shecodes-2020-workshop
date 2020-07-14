@@ -1,9 +1,10 @@
+var config = require("./config");
 var mysql = require("mysql");
 
 var con = mysql.createConnection({
-  host: "",
-  user: "",
-  password: "",
+  host: config.host,
+  user: config.username,
+  password: config.password,
 });
 
 con.connect(function (err) {
