@@ -34,8 +34,8 @@ app.get("/:id(\\d+)", (req, res) => {
   });
 });
 
-app.get("/add", (req, res) => {
-  res.render("add");
+app.get("/write", (req, res) => {
+  res.render("write");
 });
 
 var upload = multer({
@@ -51,7 +51,7 @@ var upload = multer({
   }),
 });
 
-app.post("/add", upload.single("thumbnail"), (req, res, next) => {
+app.post("/write", upload.single("thumbnail"), (req, res, next) => {
   db.query(
     `INSERT INTO \`blogs\`(title, description, content, thumbnail) VALUES ("${req.body.title}","${req.body.description}","${req.body.content}","${req.file.location}")`,
     function (err, result) {
