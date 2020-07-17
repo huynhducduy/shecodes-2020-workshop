@@ -17,13 +17,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  db.query("SELECT * FROM `blogs` ORDER BY `id` DESC", function (err, result) {
+    if (err) throw err;
+    res.render("index", { blogs: result });
+  });
 });
 
-app.get("/blogs", (req, res) => {
-  db.query("SELECT * FROM `blogs`", function (err, result) {
+app.get("/:id(\\d+)", (req, res) => {
+  db.query("SELECT * FROM `blogs` WHERE `id` = " + req.params.id, function (
+    err,
+    result
+  ) {
     if (err) throw err;
-    res.render("blogs", { blogs: result });
+    if (result.length == 0) res.redirect("/");
+    res.render("blog", { blog: result[0] });
   });
 });
 
@@ -49,7 +56,7 @@ app.post("/add", upload.single("thumbnail"), (req, res, next) => {
     `INSERT INTO \`blogs\`(title, description, content, thumbnail) VALUES ("${req.body.title}","${req.body.description}","${req.body.content}","${req.file.location}")`,
     function (err, result) {
       if (err) throw err;
-      res.redirect("/blogs");
+      res.redirect("/");
     }
   );
 });
